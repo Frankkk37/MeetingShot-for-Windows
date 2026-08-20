@@ -1,0 +1,6 @@
+PySide6
+mss
+Pillow
+opencv-python
+imagehash
+numpy
