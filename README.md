@@ -1,4 +1,5 @@
 # MeetingShot-for-Windows v0.4
+使用方法：在release中下载后打开“Meetingshot_v0.4_for_windows.exe”即可使用，不需要安装Python等环境。
 
 Windows版目标：
 v0.3 自动变化检测截图 + v0.4 pHash去重输出。
