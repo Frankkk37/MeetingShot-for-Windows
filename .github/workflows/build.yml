@@ -5,6 +5,10 @@ on:
   push:
     branches:
       - main
+      - v0.4.1-fix
+    paths:
+      - "windows/**"
+      - ".github/workflows/build.yml"
 
 jobs:
   build:
@@ -23,14 +27,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r windows/requirements.txt
-          pip install pyinstaller
+          pip install pyinstaller==6.10.0
 
       - name: Build EXE
         run: |
-          pyinstaller --onefile --windowed --name MeetingShot windows/main.py
+          pyinstaller --clean --noconfirm --onefile --windowed --name MeetingShot windows/main.py
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
-          name: MeetingShot-Windows
+          name: MeetingShot-Windows-v0.4.1
           path: dist/MeetingShot.exe
